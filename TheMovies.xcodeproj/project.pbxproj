@@ -19,7 +19,13 @@
 		CB855F2227463C01005B568B /* TheMoviesUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB855F2127463C01005B568B /* TheMoviesUITestsLaunchTests.swift */; };
 		CB855F3727463D34005B568B /* Cancellable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB855F3627463D34005B568B /* Cancellable.swift */; };
 		CB855F3927463D4E005B568B /* ConnectionError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB855F3827463D4E005B568B /* ConnectionError.swift */; };
-		CB855F3C274641BE005B568B /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB855F3B274641BE005B568B /* AppConfig.swift */; };
+		CB855F3C274641BE005B568B /* AppConfigs.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB855F3B274641BE005B568B /* AppConfigs.swift */; };
+		CB855F3F27465166005B568B /* AppContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB855F3E27465166005B568B /* AppContainer.swift */; };
+		CB855F412746524E005B568B /* DataTransferService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB855F402746524E005B568B /* DataTransferService.swift */; };
+		CB855F4327465361005B568B /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB855F4227465361005B568B /* NetworkService.swift */; };
+		CB855F4527465370005B568B /* NetworkConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB855F4427465370005B568B /* NetworkConfig.swift */; };
+		CB855F4727465431005B568B /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB855F4627465431005B568B /* Endpoint.swift */; };
+		CB855F4B2746BAD0005B568B /* MovieSceneContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB855F4A2746BAD0005B568B /* MovieSceneContainer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,7 +62,13 @@
 		CB855F2127463C01005B568B /* TheMoviesUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheMoviesUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		CB855F3627463D34005B568B /* Cancellable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cancellable.swift; sourceTree = "<group>"; };
 		CB855F3827463D4E005B568B /* ConnectionError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionError.swift; sourceTree = "<group>"; };
-		CB855F3B274641BE005B568B /* AppConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfig.swift; sourceTree = "<group>"; };
+		CB855F3B274641BE005B568B /* AppConfigs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfigs.swift; sourceTree = "<group>"; };
+		CB855F3E27465166005B568B /* AppContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppContainer.swift; sourceTree = "<group>"; };
+		CB855F402746524E005B568B /* DataTransferService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DataTransferService.swift; path = TheMovies/Application/Container/DataTransferService.swift; sourceTree = SOURCE_ROOT; };
+		CB855F4227465361005B568B /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NetworkService.swift; path = TheMovies/Application/Container/NetworkService.swift; sourceTree = SOURCE_ROOT; };
+		CB855F4427465370005B568B /* NetworkConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NetworkConfig.swift; path = TheMovies/Application/Container/NetworkConfig.swift; sourceTree = SOURCE_ROOT; };
+		CB855F4627465431005B568B /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Endpoint.swift; path = TheMovies/Application/Container/Endpoint.swift; sourceTree = SOURCE_ROOT; };
+		CB855F4A2746BAD0005B568B /* MovieSceneContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieSceneContainer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,7 +126,6 @@
 				CB855F3227463CE1005B568B /* Infrastructure */,
 				CB855F3427463CF1005B568B /* Common */,
 				CB855F3527463CF6005B568B /* Resources */,
-				CB855F0427463BF9005B568B /* TheMovies.xcdatamodeld */,
 			);
 			path = TheMovies;
 			sourceTree = "<group>";
@@ -139,9 +150,10 @@
 		CB855F2E27463C83005B568B /* Application */ = {
 			isa = PBXGroup;
 			children = (
+				CB855F3D27465154005B568B /* Container */,
 				CB855EFB27463BF9005B568B /* AppDelegate.swift */,
 				CB855EFD27463BF9005B568B /* SceneDelegate.swift */,
-				CB855F3B274641BE005B568B /* AppConfig.swift */,
+				CB855F3B274641BE005B568B /* AppConfigs.swift */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -165,6 +177,7 @@
 		CB855F3127463CD7005B568B /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				CB855F4C2746BCA1005B568B /* CoreDataStorage */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -199,8 +212,29 @@
 		CB855F3A27463E4F005B568B /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				CB855F4427465370005B568B /* NetworkConfig.swift */,
+				CB855F4227465361005B568B /* NetworkService.swift */,
+				CB855F402746524E005B568B /* DataTransferService.swift */,
+				CB855F4627465431005B568B /* Endpoint.swift */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		CB855F3D27465154005B568B /* Container */ = {
+			isa = PBXGroup;
+			children = (
+				CB855F3E27465166005B568B /* AppContainer.swift */,
+				CB855F4A2746BAD0005B568B /* MovieSceneContainer.swift */,
+			);
+			path = Container;
+			sourceTree = "<group>";
+		};
+		CB855F4C2746BCA1005B568B /* CoreDataStorage */ = {
+			isa = PBXGroup;
+			children = (
+				CB855F0427463BF9005B568B /* TheMovies.xcdatamodeld */,
+			);
+			path = CoreDataStorage;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -334,12 +368,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB855F4327465361005B568B /* NetworkService.swift in Sources */,
+				CB855F4B2746BAD0005B568B /* MovieSceneContainer.swift in Sources */,
+				CB855F4527465370005B568B /* NetworkConfig.swift in Sources */,
+				CB855F412746524E005B568B /* DataTransferService.swift in Sources */,
 				CB855F3927463D4E005B568B /* ConnectionError.swift in Sources */,
+				CB855F3F27465166005B568B /* AppContainer.swift in Sources */,
 				CB855F3727463D34005B568B /* Cancellable.swift in Sources */,
 				CB855F0027463BF9005B568B /* ViewController.swift in Sources */,
-				CB855F3C274641BE005B568B /* AppConfig.swift in Sources */,
+				CB855F3C274641BE005B568B /* AppConfigs.swift in Sources */,
 				CB855EFC27463BF9005B568B /* AppDelegate.swift in Sources */,
 				CB855F0627463BF9005B568B /* TheMovies.xcdatamodeld in Sources */,
+				CB855F4727465431005B568B /* Endpoint.swift in Sources */,
 				CB855EFE27463BF9005B568B /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -516,7 +556,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				API_BASE_URL = "http://api.themoviedb.org";
-				API_KEY = 2696829a81b1b5827d515ff121700838;
+				API_KEY = 48fe6bb303d35a81e3f7e433c932cc52;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -547,7 +587,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				API_BASE_URL = "http://api.themoviedb.org";
-				API_KEY = 2696829a81b1b5827d515ff121700838;
+				API_KEY = 48fe6bb303d35a81e3f7e433c932cc52;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
