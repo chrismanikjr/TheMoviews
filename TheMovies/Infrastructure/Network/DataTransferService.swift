@@ -2,7 +2,7 @@
 //  DataTransferService.swift
 //  TheMovies
 //
-//  Created by Chrismanto Manik on 11/18/21.
+//  Created by Chrismanto Manik on 11/19/21.
 //
 
 import Foundation
@@ -50,7 +50,6 @@ public final class DefaultDataTransferService{
     }
 }
 // MARK: - Logger
-
 public final class DefaultDataTransferErrorLogger: DataTransferErrorLogger{
     public init() { }
     
@@ -95,7 +94,6 @@ public class RawDataResponseDecoder: ResponseDecoder{
 }
 
 // MARK: - Enxtension
-
 extension DefaultDataTransferService: DataTransferService{
     private func decode<T: Decodable>(data: Data?, decoder: ResponseDecoder) -> Result<T, DataTransferError> {
         do {
@@ -150,5 +148,3 @@ extension DefaultDataTransferService: DataTransferService{
     }
     
 }
-
-

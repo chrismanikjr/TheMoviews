@@ -2,7 +2,7 @@
 //  NetworkConfig.swift
 //  TheMovies
 //
-//  Created by Chrismanto Manik on 11/18/21.
+//  Created by Chrismanto Manik on 11/19/21.
 //
 
 import Foundation

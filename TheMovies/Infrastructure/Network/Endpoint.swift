@@ -2,7 +2,7 @@
 //  Endpoint.swift
 //  TheMovies
 //
-//  Created by Chrismanto Manik on 11/18/21.
+//  Created by Chrismanto Manik on 11/19/21.
 //
 
 import Foundation
@@ -81,7 +81,6 @@ enum RequestGenerationError: Error{
     case components
 }
 // MARK: - Extension Requestable
-
 extension Requestable{
     func url(with config: NetworkConfig) throws -> URL{
         let baseURL = config.baseURL.absoluteString.last != "/" ? config.baseURL.absoluteString + "/": config.baseURL.absoluteString
