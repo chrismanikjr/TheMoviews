@@ -18,6 +18,7 @@ public protocol ResponseDecoder {
     func decode<T: Decodable>(_ data: Data) throws -> T
 }
 
+
 public protocol DataTransferService{
     typealias CompletionHandler<T> = (Result<T, DataTransferError>) -> Void
     
@@ -147,4 +148,13 @@ extension DefaultDataTransferService: DataTransferService{
         }
     }
     
+}
+extension DataTransferError: ConnectionError {
+    public var isInternetConnectionError: Bool {
+        guard case let DataTransferError.networkFailure(networkError) = self,
+            case .notConnect = networkError else {
+                return false
+        }
+        return true
+    }
 }
